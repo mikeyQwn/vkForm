@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CommentaryTextarea } from "./CommentaryTextarea";
 import { DateAndIntervalPicker } from "./DateAndIntervalPicker";
 import { FloorSelector } from "./FloorSelector";
@@ -10,15 +11,36 @@ const style = {
     border: "0.66em solid black"
 };
 
+const DEFAULT_FORM_DATA = {
+    tower: "А",
+    floor: 3,
+    meetingRoomNumber: 1,
+    stayDate: "2021-04-07",
+    stayStartTimeMs: 32400000,
+    stayEndTimeMs: 32500000,
+    commentary: ""
+};
+
 export function FormContainer() {
+    const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
     return (
         <div style={style}>
-            <TowerSelector />
-            <FloorSelector />
-            <MeetingRoomSelector />
-            <DateAndIntervalPicker />
-            <CommentaryTextarea />
-            <FormControls />
+            <TowerSelector formData={formData} setFormData={setFormData} />
+            <FloorSelector formData={formData} setFormData={setFormData} />
+            <MeetingRoomSelector
+                formData={formData}
+                setFormData={setFormData}
+            />
+            <DateAndIntervalPicker
+                formData={formData}
+                setFormData={setFormData}
+            />
+            <CommentaryTextarea formData={formData} setFormData={setFormData} />
+            <FormControls
+                formData={formData}
+                setFormData={setFormData}
+                defaultFormData={DEFAULT_FORM_DATA}
+            />
         </div>
     );
 }

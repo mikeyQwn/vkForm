@@ -1,4 +1,4 @@
-export function MeetingRoomSelector() {
+export function MeetingRoomSelector(props) {
     const NUMBER_OF_MEETING_ROOMS = 10;
     const options = new Array(NUMBER_OF_MEETING_ROOMS).fill(0).map((_, i) => {
         return {
@@ -10,7 +10,17 @@ export function MeetingRoomSelector() {
     return (
         <div className="form-children-container">
             <label>Выберите номер переговорки:</label>
-            <select onChange={(e) => console.log(e.target.value)}>
+            <select
+                value={props.formData.meetingRoomNumber}
+                onChange={(e) => {
+                    props.setFormData((formData) => {
+                        return {
+                            ...formData,
+                            meetingRoomNumber: parseInt(e.target.value)
+                        };
+                    });
+                }}
+            >
                 {options.map((option, index) => (
                     <option
                         key={`meetingRoom-option-${index}`}

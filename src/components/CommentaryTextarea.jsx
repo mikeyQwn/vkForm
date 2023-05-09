@@ -3,11 +3,19 @@ const textareaStyle = {
     height: "100%"
 };
 
-export function CommentaryTextarea() {
+export function CommentaryTextarea(props) {
     return (
         <div className="form-children-container">
             <label>Введите комментарий</label>
-            <textarea style={textareaStyle}></textarea>
+            <textarea
+                style={textareaStyle}
+                onChange={(e) => {
+                    props.setFormData((formData) => {
+                        return { ...formData, commentary: e.target.value };
+                    });
+                }}
+                value={props.formData.commentary}
+            ></textarea>
         </div>
     );
 }

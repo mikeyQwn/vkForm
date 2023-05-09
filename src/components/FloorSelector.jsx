@@ -1,4 +1,4 @@
-export function FloorSelector() {
+export function FloorSelector(props) {
     const MIN_FLOOR = 3;
     const MAX_FLOOR = 27;
     const options = new Array(MAX_FLOOR - MIN_FLOOR + 1).fill(0).map((_, i) => {
@@ -11,7 +11,14 @@ export function FloorSelector() {
     return (
         <div className="form-children-container">
             <label>Выберите этаж:</label>
-            <select onChange={(e) => console.log(e.target.value)}>
+            <select
+                value={props.formData.floor}
+                onChange={(e) => {
+                    props.setFormData((formData) => {
+                        return { ...formData, floor: e.target.value };
+                    });
+                }}
+            >
                 {options.map((option, index) => (
                     <option key={`floor-option-${index}`} value={option.value}>
                         {option.label}
