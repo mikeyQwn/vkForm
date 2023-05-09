@@ -18,8 +18,8 @@ const DEFAULT_FORM_DATA = {
     floor: 3,
     meetingRoomNumber: 1,
     stayDate: "2021-04-07",
-    stayStartTimeMs: 32400000,
-    stayEndTimeMs: 32500000,
+    stayStartTimeMs: 24400000,
+    stayEndTimeMs: 24450000,
     commentary: ""
 };
 
