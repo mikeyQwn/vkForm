@@ -8,7 +8,9 @@ import { TowerSelector } from "./TowerSelector";
 
 const style = {
     width: "40%",
-    border: "0.66em solid black"
+    minWidth: "400px",
+    border: "0.3em solid black",
+    borderRadius: "0.4em"
 };
 
 const DEFAULT_FORM_DATA = {

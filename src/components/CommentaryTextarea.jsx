@@ -1,6 +1,7 @@
 const textareaStyle = {
     width: "100%",
-    height: "100%"
+    height: "100%",
+    resize: "none"
 };
 
 export function CommentaryTextarea(props) {
