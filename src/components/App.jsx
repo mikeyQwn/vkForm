@@ -1,11 +1,20 @@
+import { FormContainer } from "./FormContainer";
+import "../App.css";
+
 const style = {
     width: "100vw",
     height: "100vh",
-    textAlign: "center"
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
 };
 
 function App() {
-    return <div style={style}>App</div>;
+    return (
+        <div style={style}>
+            <FormContainer />
+        </div>
+    );
 }
 
 export default App;
