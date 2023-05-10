@@ -8,7 +8,7 @@ import { TowerSelector } from "./TowerSelector";
 
 const style = {
     width: "40%",
-    minWidth: "400px",
+    minWidth: "550px",
     border: "0.3em solid black",
     borderRadius: "0.4em"
 };
